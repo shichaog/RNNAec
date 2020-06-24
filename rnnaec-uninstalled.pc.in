@@ -1,0 +1,13 @@
+# rnnaec uninstalled pkg-config file
+
+prefix=
+exec_prefix=
+libdir=${pcfiledir}/.libs
+includedir=${pcfiledir}/@top_srcdir@/include
+
+Name: rnnaec uninstalled
+Description: RNN-based AEC suppression (not installed)
+Version: @PACKAGE_VERSION@
+Conflicts:
+Libs: ${libdir}/librnnaec.la @lrintf_lib@
+Cflags: -I${includedir}

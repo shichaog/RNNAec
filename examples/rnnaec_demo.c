@@ -1,0 +1,69 @@
+/* Copyright (c) 2018 Gregor Richards
+ * Copyright (c) 2017 Mozilla */
+/*
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions
+   are met:
+
+   - Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+   - Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+   ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+   A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR
+   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#include <stdio.h>
+#include "rnnoise.h"
+
+#define FRAME_SIZE 160
+
+int main(int argc, char **argv) {
+  int i;
+  int first = 1;
+  float x_near[FRAME_SIZE];
+  float x_far[FRAME_SIZE];
+  float x[FRAME_SIZE];
+  FILE *f1,*f2, *fout;
+  DenoiseState *st_near;
+  st_near = rnnoise_create(NULL);
+  DenoiseState *st_far;
+  st_far = rnnoise_create(NULL);
+  if (argc!=4) {
+    fprintf(stderr, "usage: %s <near speech> <far speech> <output denoised && aeced>\n", argv[0]);
+    return 1;
+  }
+  f1 = fopen(argv[1], "r");
+  f2 = fopen(argv[2], "r");
+  fout = fopen(argv[3], "w");
+  while (1) {
+    short tmp[FRAME_SIZE];
+    fread(tmp, sizeof(short), FRAME_SIZE, f1);
+    if (feof(f1)) break;
+    for (i=0;i<FRAME_SIZE;i++) x_near[i] = tmp[i];
+    fread(tmp, sizeof(short), FRAME_SIZE, f2);
+    for (i=0;i<FRAME_SIZE;i++) x_far[i] = tmp[i];
+    rnnoise_process_frame(st_near, st_far, x_near, x_far, x);
+    for (i=0;i<FRAME_SIZE;i++) tmp[i] = x[i];
+    if (!first) fwrite(tmp, sizeof(short), FRAME_SIZE, fout);
+    first = 0;
+  }
+  rnnoise_destroy(st_near);
+  rnnoise_destroy(st_far);
+  fclose(f1);
+  fclose(f2);
+  fclose(fout);
+  return 0;
+}
