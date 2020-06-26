@@ -34,7 +34,7 @@ To Training for your own model, see next steps:
 %python training/dump_rnn.py final_weights.hdf5 ./src/rnn_data.c rnn_data.h orig
 
 %make clean & make
-%./examples/rnnoise_demo speech_noise.pcm denoised_speech_noise.pcm
+%./examples/rnnaec_demo <near speech> <far speech> out.pcm
 
 Next to research:
 1) Use this RNNAec as a NLP(Non-Linear Processing) module, LP(Linear Processing) module can use (speex or webrtc).
@@ -43,3 +43,5 @@ Next to research:
 4) This RNNAec can have denoise effect, Network layer may change as needed.
 5) Band may change as need.(I think should change)
 6) Pitch filter(I think use full band can replace this module, but computational complexity also rise)
+
+If you like this repo, Please click star!!!
