@@ -7,7 +7,8 @@
 为了方便重现，这里把生成的训练数据和结果传了上来，应该比较大，只截取的数据，含结果12G，所以，如果你只用我附带的部分数据training，我不清楚训练的结果是否能和我一样。
 链接: https://pan.baidu.com/s/1mchtEFtFzKurR2Weum8IDA 提取码: kqm2 复制这段内容后打开百度网盘手机App，操作更方便哦
 
-
+~/RNNAec/examples/rnnaec_demo dataset/rnn_near.pcm dataset/rnn_far.pcm aec_out.pcm
+I also generated result.png for view.
 
 
 RNNAec is a echo suppression library based on a recurrent neural network.
@@ -49,5 +50,8 @@ Next to research:
 4) This RNNAec can have denoise effect, Network layer may change as needed.
 5) Band may change as need.(I think should change)
 6) Pitch filter(I think use full band can replace this module, but computational complexity also rise)
+
+Note: To get beset result, pls use clean raw data to train and test; use no delay for test
+Note: This repo just for demo, I just test a limited cases, If you have problems, pls describe detail training process && attach testing datas(pcm, wav)
 
 If you like this repo, Please click star!!!
