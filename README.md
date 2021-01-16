@@ -4,7 +4,8 @@
 
 [京东购买链接](https://item.jd.com/12838726.html)
 
-为了方便重现，这里把生成的训练数据和结果传了上来，应该比较大，只截取的数据，含结果10G左右，所以，如果你只用我附带的部分数据，我不清楚训练的结果是否能和我一样。
+为了方便重现，这里把生成的训练数据和结果传了上来，应该比较大，只截取的数据，含结果10G左右，所以，如果你只用我附带的部分数据training，我不清楚训练的结果是否能和我一样。
+链接: https://pan.baidu.com/s/1mchtEFtFzKurR2Weum8IDA 提取码: kqm2 复制这段内容后打开百度网盘手机App，操作更方便哦
 
 RNNAec is a echo suppression library based on a recurrent neural network.
 I refered from RNNnoise Open Source Project.
