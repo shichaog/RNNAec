@@ -7,9 +7,12 @@
 为了方便重现，这里把生成的训练数据和结果传了上来，应该比较大，只截取的数据，含结果12G，所以，如果你只用我附带的部分数据training，我不清楚训练的结果是否能和我一样。
 链接: https://pan.baidu.com/s/1mchtEFtFzKurR2Weum8IDA 提取码: kqm2 复制这段内容后打开百度网盘手机App，操作更方便哦
 
+上传的数据是使用如下命令测试的，其中rnn_near.pcm是近端语音数据，rnn_far.pcm是远端语音数据，aec_out.pcm是aec结果数据，所有的数据均是16kHz，mono，raw 数据；
 ~/RNNAec/examples/rnnaec_demo dataset/rnn_near.pcm dataset/rnn_far.pcm aec_out.pcm
+result.png是前几秒的效果图。
 I also generated result.png for view.
 
+这一效果是基于我自己生成的数据集测试的情况，并不代表普适性非常强（尤其不要想着这个版本拿去直接商业化），如果您的数据集效果不好，可以给笔者传份数据，汇总后数据量够多的话，我会下模型，没多少数据的话就不搞了，谢谢~！
 
 RNNAec is a echo suppression library based on a recurrent neural network.
 I refered from RNNnoise Open Source Project.
