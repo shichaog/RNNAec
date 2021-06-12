@@ -1,0 +1,2 @@
+[32m    [GXX] adaptive_fir_filter.cc.o [0m
+/mnt/d/Users/Projects/aec3/aec3/Skeleton1/build/build_rule.mk:82: recipe for target '/mnt/d/Users/Projects/aec3/aec3/Skeleton1/out/submodules/backup/aec3/adaptive_fir_filter.cc.o' failed

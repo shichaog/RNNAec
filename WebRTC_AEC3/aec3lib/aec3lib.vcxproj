@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{13A08AE9-3EFE-49ED-8BC0-F4524C8230BD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>aec3lib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\aec333\third_party\absl_lib\absl-lib-win10\absllib;$(LibraryPath)</LibraryPath>
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\aec3\third_party\absl_lib\absl-lib-win10\absllib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBug;_WINSOCKAPI_;WEBRTC_APM_DEBUG_DUMP;WEBRTC_WIN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\aec3\third_party\absl_include;$(ProjectDir)\aec3\include;$(ProjectDir)\aec3\audio;$(ProjectDir)\aec3\mock;$(ProjectDir)\aec3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Users\86152\Documents\Projects_vs2017\aec3lib\Debug;D:\Users\86152\Documents\Projects_vs2017\aec3lib\aec3lib\aec333\third_party\absl_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>absl_strings.lib;absl_bad_optional_access.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>D:\Users\86152\Documents\Projects_vs2017\aec3lib\aec3lib\aec333\third_party\absl_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINSOCKAPI_;WEBRTC_APM_DEBUG_DUMP;WEBRTC_WIN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\aec3\third_party\absl_include;$(ProjectDir)\aec3\include;$(ProjectDir)\aec3\audio;$(ProjectDir)\aec3\mock;$(ProjectDir)\aec3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="aec3\adaptive_fir_filter.h" />
+    <ClInclude Include="aec3\aec3_common.h" />
+    <ClInclude Include="aec3\aec3_fft.h" />
+    <ClInclude Include="aec3\aec_state.h" />
+    <ClInclude Include="aec3\api_call_jitter_metrics.h" />
+    <ClInclude Include="aec3\audio\audio_frame.h" />
+    <ClInclude Include="aec3\audio\audio_mixer.h" />
+    <ClInclude Include="aec3\audio\echo_canceller3_config.h" />
+    <ClInclude Include="aec3\audio\echo_canceller3_factory.h" />
+    <ClInclude Include="aec3\audio\echo_control.h" />
+    <ClInclude Include="aec3\block_delay_buffer.h" />
+    <ClInclude Include="aec3\block_framer.h" />
+    <ClInclude Include="aec3\block_processor.h" />
+    <ClInclude Include="aec3\block_processor_metrics.h" />
+    <ClInclude Include="aec3\cascaded_biquad_filter.h" />
+    <ClInclude Include="aec3\clockdrift_detector.h" />
+    <ClInclude Include="aec3\comfort_noise_generator.h" />
+    <ClInclude Include="aec3\decimator.h" />
+    <ClInclude Include="aec3\delay_estimate.h" />
+    <ClInclude Include="aec3\downsampled_render_buffer.h" />
+    <ClInclude Include="aec3\echo_audibility.h" />
+    <ClInclude Include="aec3\echo_canceller3.h" />
+    <ClInclude Include="aec3\echo_path_delay_estimator.h" />
+    <ClInclude Include="aec3\echo_path_variability.h" />
+    <ClInclude Include="aec3\echo_remover.h" />
+    <ClInclude Include="aec3\echo_remover_metrics.h" />
+    <ClInclude Include="aec3\erle_estimator.h" />
+    <ClInclude Include="aec3\erl_estimator.h" />
+    <ClInclude Include="aec3\fft_buffer.h" />
+    <ClInclude Include="aec3\fft_data.h" />
+    <ClInclude Include="aec3\filter_analyzer.h" />
+    <ClInclude Include="aec3\frame_blocker.h" />
+    <ClInclude Include="aec3\fullband_erle_estimator.h" />
+    <ClInclude Include="aec3\include\aligned_malloc.h" />
+    <ClInclude Include="aec3\include\arch.h" />
+    <ClInclude Include="aec3\include\arraysize.h" />
+    <ClInclude Include="aec3\include\array_view.h" />
+    <ClInclude Include="aec3\include\atomic_ops.h" />
+    <ClInclude Include="aec3\include\audio_buffer.h" />
+    <ClInclude Include="aec3\include\audio_frame.h" />
+    <ClInclude Include="aec3\include\audio_frame_view.h" />
+    <ClInclude Include="aec3\include\audio_generator.h" />
+    <ClInclude Include="aec3\include\audio_processing.h" />
+    <ClInclude Include="aec3\include\audio_processing_statistics.h" />
+    <ClInclude Include="aec3\include\audio_util.h" />
+    <ClInclude Include="aec3\include\channel_buffer.h" />
+    <ClInclude Include="aec3\include\checks.h" />
+    <ClInclude Include="aec3\include\clock.h" />
+    <ClInclude Include="aec3\include\compile_assert_c.h" />
+    <ClInclude Include="aec3\include\config.h" />
+    <ClInclude Include="aec3\include\constructor_magic.h" />
+    <ClInclude Include="aec3\include\cpu_features_wrapper.h" />
+    <ClInclude Include="aec3\include\cpu_info.h" />
+    <ClInclude Include="aec3\include\critical_section.h" />
+    <ClInclude Include="aec3\include\deprecation.h" />
+    <ClInclude Include="aec3\include\dot_product_with_scale.h" />
+    <ClInclude Include="aec3\include\echo_canceller_test_tools.h" />
+    <ClInclude Include="aec3\include\field_trial.h" />
+    <ClInclude Include="aec3\include\gain_control.h" />
+    <ClInclude Include="aec3\include\gmock.h" />
+    <ClInclude Include="aec3\include\gtest.h" />
+    <ClInclude Include="aec3\include\gtest_prod_util.h" />
+    <ClInclude Include="aec3\include\ignore_wundef.h" />
+    <ClInclude Include="aec3\include\inline.h" />
+    <ClInclude Include="aec3\include\logging.h" />
+    <ClInclude Include="aec3\include\metrics.h" />
+    <ClInclude Include="aec3\include\ntp_time.h" />
+    <ClInclude Include="aec3\include\ooura_fft.h" />
+    <ClInclude Include="aec3\include\ooura_fft_tables_common.h" />
+    <ClInclude Include="aec3\include\ooura_fft_tables_neon_sse2.h" />
+    <ClInclude Include="aec3\include\platform_file.h" />
+    <ClInclude Include="aec3\include\platform_thread_types.h" />
+    <ClInclude Include="aec3\include\push_resampler.h" />
+    <ClInclude Include="aec3\include\push_sinc_resampler.h" />
+    <ClInclude Include="aec3\include\race_checker.h" />
+    <ClInclude Include="aec3\include\random.h" />
+    <ClInclude Include="aec3\include\ref_count.h" />
+    <ClInclude Include="aec3\include\ref_counter.h" />
+    <ClInclude Include="aec3\include\resampler.h" />
+    <ClInclude Include="aec3\include\resample_by_2_internal.h" />
+    <ClInclude Include="aec3\include\rtc_export.h" />
+    <ClInclude Include="aec3\include\rw_lock_win.h" />
+    <ClInclude Include="aec3\include\rw_lock_wrapper.h" />
+    <ClInclude Include="aec3\include\safe_compare.h" />
+    <ClInclude Include="aec3\include\safe_conversions.h" />
+    <ClInclude Include="aec3\include\safe_conversions_impl.h" />
+    <ClInclude Include="aec3\include\safe_minmax.h" />
+    <ClInclude Include="aec3\include\sanitizer.h" />
+    <ClInclude Include="aec3\include\scoped_refptr.h" />
+    <ClInclude Include="aec3\include\signal_processing_library.h" />
+    <ClInclude Include="aec3\include\sinc_resampler.h" />
+    <ClInclude Include="aec3\include\sparse_fir_filter.h" />
+    <ClInclude Include="aec3\include\splitting_filter.h" />
+    <ClInclude Include="aec3\include\spl_inl.h" />
+    <ClInclude Include="aec3\include\spl_inl_armv7.h" />
+    <ClInclude Include="aec3\include\spl_inl_mips.h" />
+    <ClInclude Include="aec3\include\spl_sqrt_floor.h" />
+    <ClInclude Include="aec3\include\string_builder.h" />
+    <ClInclude Include="aec3\include\string_encode.h" />
+    <ClInclude Include="aec3\include\string_to_number.h" />
+    <ClInclude Include="aec3\include\string_utils.h" />
+    <ClInclude Include="aec3\include\swap_queue.h" />
+    <ClInclude Include="aec3\include\thread_annotations.h" />
+    <ClInclude Include="aec3\include\three_band_filter_bank.h" />
+    <ClInclude Include="aec3\include\time_utils.h" />
+    <ClInclude Include="aec3\include\type_traits.h" />
+    <ClInclude Include="aec3\include\unused.h" />
+    <ClInclude Include="aec3\include\wav_file.h" />
+    <ClInclude Include="aec3\include\wav_header.h" />
+    <ClInclude Include="aec3\include\winsock2i.h" />
+    <ClInclude Include="aec3\logging\apm_data_dumper.h" />
+    <ClInclude Include="aec3\main_filter_update_gain.h" />
+    <ClInclude Include="aec3\matched_filter.h" />
+    <ClInclude Include="aec3\matched_filter_lag_aggregator.h" />
+    <ClInclude Include="aec3\matrix_buffer.h" />
+    <ClInclude Include="aec3\moving_average.h" />
+    <ClInclude Include="aec3\render_buffer.h" />
+    <ClInclude Include="aec3\render_delay_buffer.h" />
+    <ClInclude Include="aec3\render_delay_controller.h" />
+    <ClInclude Include="aec3\render_delay_controller_metrics.h" />
+    <ClInclude Include="aec3\render_reverb_model.h" />
+    <ClInclude Include="aec3\render_signal_analyzer.h" />
+    <ClInclude Include="aec3\residual_echo_estimator.h" />
+    <ClInclude Include="aec3\reverb_decay_estimator.h" />
+    <ClInclude Include="aec3\reverb_frequency_response.h" />
+    <ClInclude Include="aec3\reverb_model.h" />
+    <ClInclude Include="aec3\reverb_model_estimator.h" />
+    <ClInclude Include="aec3\reverb_model_fallback.h" />
+    <ClInclude Include="aec3\shadow_filter_update_gain.h" />
+    <ClInclude Include="aec3\signal_dependent_erle_estimator.h" />
+    <ClInclude Include="aec3\skew_estimator.h" />
+    <ClInclude Include="aec3\stationarity_estimator.h" />
+    <ClInclude Include="aec3\subband_erle_estimator.h" />
+    <ClInclude Include="aec3\subtractor.h" />
+    <ClInclude Include="aec3\subtractor_output.h" />
+    <ClInclude Include="aec3\subtractor_output_analyzer.h" />
+    <ClInclude Include="aec3\suppression_filter.h" />
+    <ClInclude Include="aec3\suppression_gain.h" />
+    <ClInclude Include="aec3\vector_buffer.h" />
+    <ClInclude Include="aec3\vector_math.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aec3\adaptive_fir_filter.cc" />
+    <ClCompile Include="aec3\aec3_common.cc" />
+    <ClCompile Include="aec3\aec3_fft.cc" />
+    <ClCompile Include="aec3\aec_state.cc" />
+    <ClCompile Include="aec3\useful\aligned_malloc.cc" />
+    <ClCompile Include="aec3\api_call_jitter_metrics.cc" />
+    <ClCompile Include="aec3\audio\audio_frame.cc" />
+    <ClCompile Include="aec3\audio\echo_canceller3_config.cc" />
+    <ClCompile Include="aec3\audio\echo_canceller3_factory.cc" />
+    <ClCompile Include="aec3\useful\audio_buffer.cc" />
+    <ClCompile Include="aec3\useful\audio_frame.cc" />
+    <ClCompile Include="aec3\useful\audio_processing_statistics.cc" />
+    <ClCompile Include="aec3\block_delay_buffer.cc" />
+    <ClCompile Include="aec3\block_framer.cc" />
+    <ClCompile Include="aec3\block_processor.cc" />
+    <ClCompile Include="aec3\block_processor_metrics.cc" />
+    <ClCompile Include="aec3\cascaded_biquad_filter.cc" />
+    <ClCompile Include="aec3\useful\audio_util.cc" />
+    <ClCompile Include="aec3\useful\channel_buffer.cc" />
+    <ClCompile Include="aec3\useful\checks.cc" />
+    <ClCompile Include="aec3\clockdrift_detector.cc" />
+    <ClCompile Include="aec3\comfort_noise_generator.cc" />
+    <ClCompile Include="aec3\useful\clock.cc" />
+    <ClCompile Include="aec3\useful\config.cc" />
+    <ClCompile Include="aec3\useful\cpu_features.cc" />
+    <ClCompile Include="aec3\useful\cpu_info.cc" />
+    <ClCompile Include="aec3\useful\critical_section.cc" />
+    <ClCompile Include="aec3\decimator.cc" />
+    <ClCompile Include="aec3\useful\dot_product_with_scale.cc" />
+    <ClCompile Include="aec3\downsampled_render_buffer.cc" />
+    <ClCompile Include="aec3\echo_audibility.cc" />
+    <ClCompile Include="aec3\echo_canceller3.cc" />
+    <ClCompile Include="aec3\useful\echo_canceller_test_tools.cc" />
+    <ClCompile Include="aec3\echo_path_delay_estimator.cc" />
+    <ClCompile Include="aec3\echo_path_variability.cc" />
+    <ClCompile Include="aec3\echo_remover.cc" />
+    <ClCompile Include="aec3\echo_remover_metrics.cc" />
+    <ClCompile Include="aec3\erle_estimator.cc" />
+    <ClCompile Include="aec3\erl_estimator.cc" />
+    <ClCompile Include="aec3\fft_buffer.cc" />
+    <ClCompile Include="aec3\useful\field_trial.cc" />
+    <ClCompile Include="aec3\filter_analyzer.cc" />
+    <ClCompile Include="aec3\frame_blocker.cc" />
+    <ClCompile Include="aec3\fullband_erle_estimator.cc" />
+    <ClCompile Include="aec3\useful\logging.cc" />
+    <ClCompile Include="aec3\logging\apm_data_dumper.cc" />
+    <ClCompile Include="aec3\main_filter_update_gain.cc" />
+    <ClCompile Include="aec3\matched_filter.cc" />
+    <ClCompile Include="aec3\matched_filter_lag_aggregator.cc" />
+    <ClCompile Include="aec3\matrix_buffer.cc" />
+    <ClCompile Include="aec3\useful\metrics.cc" />
+    <ClCompile Include="aec3\moving_average.cc" />
+    <ClCompile Include="aec3\useful\ooura_fft.cc" />
+    <ClCompile Include="aec3\ooura_fft_sse2.cc" />
+    <ClCompile Include="aec3\useful\platform_file.cc" />
+    <ClCompile Include="aec3\useful\platform_thread_types.cc" />
+    <ClCompile Include="aec3\useful\push_resampler.cc" />
+    <ClCompile Include="aec3\useful\push_sinc_resampler.cc" />
+    <ClCompile Include="aec3\useful\race_checker.cc" />
+    <ClCompile Include="aec3\useful\random.cc" />
+    <ClCompile Include="aec3\render_buffer.cc" />
+    <ClCompile Include="aec3\render_delay_buffer.cc" />
+    <ClCompile Include="aec3\render_delay_controller.cc" />
+    <ClCompile Include="aec3\render_delay_controller_metrics.cc" />
+    <ClCompile Include="aec3\render_reverb_model.cc" />
+    <ClCompile Include="aec3\render_signal_analyzer.cc" />
+    <ClCompile Include="aec3\useful\resample.c" />
+    <ClCompile Include="aec3\useful\resampler.cc" />
+    <ClCompile Include="aec3\residual_echo_estimator.cc" />
+    <ClCompile Include="aec3\reverb_decay_estimator.cc" />
+    <ClCompile Include="aec3\reverb_frequency_response.cc" />
+    <ClCompile Include="aec3\reverb_model.cc" />
+    <ClCompile Include="aec3\reverb_model_estimator.cc" />
+    <ClCompile Include="aec3\reverb_model_fallback.cc" />
+    <ClCompile Include="aec3\shadow_filter_update_gain.cc" />
+    <ClCompile Include="aec3\signal_dependent_erle_estimator.cc" />
+    <ClCompile Include="aec3\useful\resample_48khz.c" />
+    <ClCompile Include="aec3\useful\resample_by_2.c" />
+    <ClCompile Include="aec3\useful\resample_by_2_internal.c" />
+    <ClCompile Include="aec3\useful\resample_fractional.c" />
+    <ClCompile Include="aec3\useful\rw_lock_win.cc" />
+    <ClCompile Include="aec3\useful\rw_lock_wrapper.cc" />
+    <ClCompile Include="aec3\useful\sinc_resampler.cc" />
+    <ClCompile Include="aec3\skew_estimator.cc" />
+    <ClCompile Include="aec3\useful\sinc_resampler_sse.cc" />
+    <ClCompile Include="aec3\useful\sparse_fir_filter.cc" />
+    <ClCompile Include="aec3\useful\splitting_filter.c" />
+    <ClCompile Include="aec3\useful\splitting_filter1.cc" />
+    <ClCompile Include="aec3\spl_inl.c" />
+    <ClCompile Include="aec3\spl_sqrt_floor.c" />
+    <ClCompile Include="aec3\stationarity_estimator.cc" />
+    <ClCompile Include="aec3\useful\string_builder.cc" />
+    <ClCompile Include="aec3\useful\string_encode.cc" />
+    <ClCompile Include="aec3\useful\string_to_number.cc" />
+    <ClCompile Include="aec3\useful\string_utils.cc" />
+    <ClCompile Include="aec3\subband_erle_estimator.cc" />
+    <ClCompile Include="aec3\subtractor.cc" />
+    <ClCompile Include="aec3\subtractor_output.cc" />
+    <ClCompile Include="aec3\subtractor_output_analyzer.cc" />
+    <ClCompile Include="aec3\suppression_filter.cc" />
+    <ClCompile Include="aec3\suppression_gain.cc" />
+    <ClCompile Include="aec3\useful\three_band_filter_bank.cc" />
+    <ClCompile Include="aec3\useful\time_utils.cc" />
+    <ClCompile Include="aec3\vector_buffer.cc" />
+    <ClCompile Include="aec3\useful\wav_file.cc" />
+    <ClCompile Include="aec3\useful\wav_header.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
